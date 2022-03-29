@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import seaborn as sns
 import plotly.express as px
+import numpy as np
 
 # pip uninstall click
 # pip install click==8.0.4
