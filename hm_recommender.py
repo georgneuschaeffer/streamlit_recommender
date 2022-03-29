@@ -15,7 +15,6 @@ st.write('The purpose of this recommender is to show you the pieces that you may
 df_sampled = pd.read_csv('df_sampled_42.csv') # create data framewith sampled data for recommendation
 sample_customer_pivot = df_sampled.pivot_table(index='invoice', columns=['article_id'], values='quantity').fillna(0) # make the table needed for recommendation
 
-single_articles = df_sampled['article_id'].unique() # make list
 
 ## make recommender function
 def get_recommendation(df,item):
@@ -35,8 +34,17 @@ def get_recommendation(df,item):
 
     return recommendations
 
+result = st.button('click here to get new clothes') # returns True
+
+if result: 
+    single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # make list
+
 ## the recommendation itself
 product = st.selectbox('Choose which product you like',single_articles) #select one specific product
 product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:5]) # get the top 4 recommended products
 
 st.write('The three recommendations are:', product_recommended)
+st.write('One', product_recommended[0])
+st.write('Two', product_recommended[1])
+st.write('Three', product_recommended[2])
+st.write('Four', product_recommended[3])
