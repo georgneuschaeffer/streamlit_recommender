@@ -39,11 +39,8 @@ def get_recommendation(df,item):
 result = st.button('click here to get new clothes') # resamples the lsit of products.
 if result: 
     single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
-    ## This is executed once the user selected a specific clothing out of the list
-    product = st.selectbox('Choose which product you like',single_articles) #select one specific product
-    ## after the user has clicked this button he/she sees the recommendation
-else:
-    st.write('click above and get a selection of clothes')
+
+product = st.selectbox('Choose which product you like',single_articles) #select one specific product
 
 recommend_action = st.button('click here to get your recommendations') # returns True
 if recommend_action:
