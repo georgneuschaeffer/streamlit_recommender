@@ -63,7 +63,7 @@ images = [image1, image2 ,image3, image4, image5] # list of pictures
 images_caption = ['image1_text',  'image2_text', 'image3_text', 'image4_text', 'image5_text'] #list of picture titles
 
 #displaying the image on streamlit app
-st.image(images, width=150, caption=images_caption)
+st.image(images, width=120, caption=images_caption)
 
 # image_iterator = paginator("Select a sunset page", sunset_imgs)
 # indices_on_page, images_on_page = map(list, zip(*image_iterator))
