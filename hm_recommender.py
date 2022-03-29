@@ -49,17 +49,11 @@ product = st.selectbox('Choose which product you like', single_articles) #select
 
 st.write('**The selected product is**') #, article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 slected_prod_pic = Image.open('pictures/opt_0156289011.jpg')
-col1, col2, col3 = st.beta_columns([1,6,1])
-
-with col1:
-st.write("")
-
-with col2:
 st.image(slected_prod_pic, caption=article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 
-with col3:
-st.write("")
-
+st.write(' ')
+st.write(' ')
+st.write(' ')
 
 product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:6]) # get the top 4 recommended products
 product_rec_name0 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[0]].prod_color.unique()[0]
