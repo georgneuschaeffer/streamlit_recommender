@@ -12,7 +12,7 @@ st.title('This is a recommender')
 st.write('The purpose of this recommender is to show you the pieces that you may like based on the purchases of other people.')
 
 
-df_sampled = pd.read_csv('df_sampled_42') # create data framewith sampled data for recommendation
+df_sampled = pd.read_csv('df_sampled_42.csv') # create data framewith sampled data for recommendation
 sample_customer_pivot = df_sampled.pivot_table(index='invoice', columns=['article_id'], values='quantity').fillna(0) # make the table needed for recommendation
 
 single_articles = df_sampled['article_id'].unique() # make list
