@@ -39,7 +39,7 @@ def get_recommendation(df,item):
         # single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
         # product = st.selectbox('Choose which product you like', single_articles) #select one specific product
 
-product = np.random.choice(df_sampled['article_id'].unique(), 1) #select one specific product
+product = np.random.choice(df_sampled['article_id'].unique()[0], 1)[0] #select one specific product
 
 st.write('The selected product is: ', product)
 
