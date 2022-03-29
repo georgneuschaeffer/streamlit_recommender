@@ -38,6 +38,8 @@ result = st.button('click here to get new clothes') # returns True
 
 if result: 
     single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # make list
+else:
+    single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # make list
 
 ## the recommendation itself
 product = st.selectbox('Choose which product you like',single_articles) #select one specific product
