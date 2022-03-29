@@ -52,10 +52,22 @@ st.write('Four', product_recommended[3])
 
 
 #opening the image
-image = Image.open('pictures/opt_0153115039.jpg')
+image1 = Image.open('pictures/opt_0153115039.jpg')
+image2 = Image.open('pictures/opt_0156224001.jpg')
+image3 = Image.open('pictures/opt_0153115039.jpg')
+image4 = Image.open('pictures/opt_0156231001.jpg')
+image5 = Image.open('pictures/opt_0156610007.jpg')
+
+images = [image1, image2 ,image3, image4, image5] # list of pictures
+
+images_caption = ['image1_text',  'image2_text', 'image3_text', 'image4_text', 'image5_text'] #list of picture titles
 
 #displaying the image on streamlit app
-st.image(image, caption='Enter any caption here')
+st.image(images, use_column_width=True, caption=images_caption)
+
+# image_iterator = paginator("Select a sunset page", sunset_imgs)
+# indices_on_page, images_on_page = map(list, zip(*image_iterator))
+# st.image(images_on_page, width=100, caption=indices_on_page)
 
 
 # result = st.button('click here to get new clothes') # resamples the lsit of products.
