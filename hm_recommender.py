@@ -47,13 +47,19 @@ product = st.selectbox('Choose which product you like', single_articles) #select
 #st.write('The selected product is:', article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 
 
-st.write('The selected product is') #, article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
+st.write('**The selected product is**') #, article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 slected_prod_pic = Image.open('pictures/opt_0156289011.jpg')
+col1, col2, col3 = st.beta_columns([1,6,1])
+
+with col1:
+st.write("")
+
+with col2:
 st.image(slected_prod_pic, caption=article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 
-st.write(' ')
-st.write(' ')
-st.write(' ')
+with col3:
+st.write("")
+
 
 product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:6]) # get the top 4 recommended products
 product_rec_name0 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[0]].prod_color.unique()[0]
@@ -81,6 +87,7 @@ images = [image1, image2 ,image3, image4, image5] # list of pictures
 images_caption = [product_rec_name0,  product_rec_name1, product_rec_name2, product_rec_name3, product_rec_name4] #list of picture titles
 
 #displaying the image on streamlit app
+st.write('**I recommend you these products**')
 st.image(images, width=120, caption=images_caption)
 
 # image_iterator = paginator("Select a sunset page", sunset_imgs)
