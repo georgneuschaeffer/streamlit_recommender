@@ -43,7 +43,7 @@ product = np.random.choice(df_sampled['article_id'].unique()[0], 1)[0] #select o
 
 st.write('The selected product is: ', product)
 
-product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:5]) # get the top 4 recommended products
+product_recommended = list(get_recommendation(sample_customer_pivot, 100145625).article_id.iloc[1:5]) # get the top 4 recommended products
 st.write('The recommender recommends those products')
 st.write('One', product_recommended[0])
 st.write('Two', product_recommended[1])
