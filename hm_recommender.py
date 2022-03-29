@@ -9,7 +9,7 @@ from PIL import Image
 # pip uninstall click
 # pip install click==8.0.4
 
-st.title('Get best style recommendations based on purchased baskets of millions of users!')
+st.title('Get best style recommendations based on purchased baskets of millions of users! Stand 17.00 Uhr 29.03.2022')
 
 st.write('The purpose of this recommender is to show you the pieces that you may like based on the purchases of other people. The company sells more than 30,000 items and therefore you only see a small sample of products here. You can refresh the sample of clothes anytime you want')
 
