@@ -4,6 +4,7 @@ import streamlit as st
 import seaborn as sns
 import plotly.express as px
 import numpy as np
+from PIL import Image
 
 # pip uninstall click
 # pip install click==8.0.4
@@ -49,6 +50,12 @@ st.write('Two', product_recommended[1])
 st.write('Three', product_recommended[2])
 st.write('Four', product_recommended[3])
 
+
+#opening the image
+image = Image.open('pictures/opt_0153115039.jpg')
+
+#displaying the image on streamlit app
+st.image(image, caption='Enter any caption here')
 
 
 # result = st.button('click here to get new clothes') # resamples the lsit of products.
