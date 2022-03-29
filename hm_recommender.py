@@ -37,6 +37,7 @@ def get_recommendation(df,item):
 
 ## Get a list of clothes that are presented to the user
 result = st.button('click here to get new clothes') # resamples the lsit of products.
+single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
 if result: 
     single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
 
