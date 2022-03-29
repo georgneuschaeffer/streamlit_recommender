@@ -45,18 +45,22 @@ product = st.selectbox('Choose which product you like', single_articles) #select
 st.write('The selected product is: ', article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:6]) # get the top 4 recommended products
 
+st.write(' ')
+st.write(' ')
+st.write(' ')
+
 product_rec_name0 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[0]].prod_color.unique()[0]
 product_rec_name1 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[1]].prod_color.unique()[0]
 product_rec_name2 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[2]].prod_color.unique()[0]
 product_rec_name3 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[3]].prod_color.unique()[0]
 product_rec_name4 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[4]].prod_color.unique()[0]
 
-st.write('The recommender recommends those products')
-st.write('One', product_rec_name0)
-st.write('Two', product_rec_name1)
-st.write('Three', product_rec_name2)
-st.write('Four', product_rec_name3)
-st.write('Four', product_rec_name4)
+st.write('I recommend you the following products:')
+st.write('    -->', product_rec_name0)
+st.write('    -->', product_rec_name1)
+st.write('    -->', product_rec_name2)
+st.write('    -->', product_rec_name3)
+st.write('    -->', product_rec_name4)
 
 #opening the image
 image1 = Image.open('pictures/opt_0153115039.jpg')
@@ -83,3 +87,5 @@ st.image(images, width=120, caption=images_caption)
 #     single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
 # else:
 #     st.write('still the same :)')
+
+st.write('I hope you like the recommondations!!!')
