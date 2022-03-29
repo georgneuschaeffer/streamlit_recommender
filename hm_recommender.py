@@ -44,8 +44,10 @@ product = st.selectbox('Choose which product you like', single_articles) #select
 
 
 
-st.write('The selected product is: ', article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
+#st.write('The selected product is:', article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 
+
+st.write('The selected product is') #, article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 slected_prod_pic = Image.open('pictures/opt_0156289011.jpg')
 st.image(slected_prod_pic, caption=article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 
@@ -60,12 +62,12 @@ product_rec_name2 = article_id_women_desc[article_id_women_desc['article_id'] ==
 product_rec_name3 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[3]].prod_color.unique()[0]
 product_rec_name4 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[4]].prod_color.unique()[0]
 
-st.write('I recommend you the following products:')
-st.write('    -->', product_rec_name0)
-st.write('    -->', product_rec_name1)
-st.write('    -->', product_rec_name2)
-st.write('    -->', product_rec_name3)
-st.write('    -->', product_rec_name4)
+# st.write('I recommend you the following products:')
+# st.write('    -->', product_rec_name0)
+# st.write('    -->', product_rec_name1)
+# st.write('    -->', product_rec_name2)
+# st.write('    -->', product_rec_name3)
+# st.write('    -->', product_rec_name4)
 
 #opening the image
 image1 = Image.open('pictures/opt_0153115039.jpg')
