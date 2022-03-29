@@ -8,9 +8,9 @@ import numpy as np
 # pip uninstall click
 # pip install click==8.0.4
 
-st.title('This is a recommender')
+st.title('Get best style recommendations based on purchased baskets of millions of users!')
 
-st.write('The purpose of this recommender is to show you the pieces that you may like based on the purchases of other people.')
+st.write('The purpose of this recommender is to show you the pieces that you may like based on the purchases of other people. The company sells more than 30,000 items and therefore you only see a small sample of products here. You can refresh the sample of clothes anytime you want')
 
 
 df_sampled = pd.read_csv('df_sampled_42.csv') # create data framewith sampled data for recommendation
@@ -35,19 +35,24 @@ def get_recommendation(df,item):
 
     return recommendations
 
-result = st.button('click here to get new clothes') # returns True
-
+## Get a list of clothes that are presented to the user
+result = st.button('click here to get new clothes') # resamples the lsit of products.
 if result: 
-    single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # make list
+    single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
 else:
     single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # make list
 
-## the recommendation itself
+## This is executed once the user selected a specific clothing out of the list
 product = st.selectbox('Choose which product you like',single_articles) #select one specific product
 product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:5]) # get the top 4 recommended products
 
-st.write('The three recommendations are:', product_recommended)
-st.write('One', product_recommended[0])
-st.write('Two', product_recommended[1])
-st.write('Three', product_recommended[2])
-st.write('Four', product_recommended[3])
+## after the user has clicked this button he/she sees the recommendation
+recommend_action = st.button('click here to get your recommendations') # returns True
+if recommend_action:
+    st.write('The recommender recommends those products')
+    st.write('One', product_recommended[0])
+    st.write('Two', product_recommended[1])
+    st.write('Three', product_recommended[2])
+    st.write('Four', product_recommended[3])
+else:
+    st.write('please click above')
