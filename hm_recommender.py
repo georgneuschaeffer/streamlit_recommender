@@ -36,10 +36,14 @@ def get_recommendation(df,item):
     return recommendations
 
 ## Get a list of clothes that are presented to the user
-single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
-product = st.selectbox('Choose which product you like',single_articles) #select one specific product
+        # single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
+        # product = st.selectbox('Choose which product you like', single_articles) #select one specific product
 
-recommend_action = st.button('click here to get your recommendations') # returns True
+product = np.random.choice(df_sampled['article_id'].unique(), 1) #select one specific product
+
+st.write('The selected product is: ', product)
+
+recommend_action = st.button('Click here to get a new recommendation') # returns True
 if recommend_action:
     product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:5]) # get the top 4 recommended products
     st.write('The recommender recommends those products')
@@ -52,9 +56,9 @@ else:
 
 
 
-result = st.button('click here to get new clothes') # resamples the lsit of products.
-if result: 
-    st.write('new set of clothes!!')
-    single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
-else:
-    st.write('still the same :)')
+# result = st.button('click here to get new clothes') # resamples the lsit of products.
+# if result: 
+#     st.write('new set of clothes!!')
+#     single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
+# else:
+#     st.write('still the same :)')
