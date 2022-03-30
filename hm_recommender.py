@@ -59,7 +59,11 @@ st.write(' ')
 st.write(' ')
 st.write(' ')
 
-product_recommended = list(get_recommendation(sample_customer_pivot, product).article_id.iloc[1:6]) # get the top 4 recommended products
+df_recommendation = get_recommendation(sample_customer_pivot, product) # get the top 4 recommended products
+
+product_recommended = list(df_recommendation.article_id.iloc[1:6]) # get the top 4 recommended products
+product_correlation = list(df_recommendation.correlation.iloc[1:6]) # get the top 4 recommended products
+
 product_rec_name0 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[0]].prod_color.unique()[0]
 product_rec_name1 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[1]].prod_color.unique()[0]
 product_rec_name2 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[2]].prod_color.unique()[0]
@@ -94,10 +98,10 @@ image5 = Image.open(picture_path5)
 
 images = [image1, image2 ,image3, image4, image5] # list of pictures
 
-images_caption = [product_rec_name0,  product_rec_name1, product_rec_name2, product_rec_name3, product_rec_name4] #list of picture titles
+images_caption = [[product_rec_name0, product_correlation[0]],  product_rec_name1, product_rec_name2, product_rec_name3, product_rec_name4] #list of picture titles
 
 #displaying the image on streamlit app
-st.write('**I recommend you these products**')
+st.write('**Other customers bought also**')
 st.image(images, width=120, caption=images_caption)
 
 # image_iterator = paginator("Select a sunset page", sunset_imgs)
