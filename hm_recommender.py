@@ -98,7 +98,11 @@ image5 = Image.open(picture_path5)
 
 images = [image1, image2 ,image3, image4, image5] # list of pictures
 
-images_caption = [[product_rec_name0, product_correlation[0]],  [product_rec_name1, product_correlation[1]], [product_rec_name2, product_correlation[2]], [product_rec_name3, product_correlation[3]], [product_rec_name4, product_correlation[4]]] #list of picture titles
+images_caption = [(product_rec_name0, round(product_correlation[0],2)),  
+[product_rec_name1, round(product_correlation[1],2)], 
+[product_rec_name2, round(product_correlation[2],2)], 
+[product_rec_name3, round(product_correlation[3],2)], 
+[product_rec_name4, round(product_correlation[4],2)]] #list of picture titles
 
 #displaying the image on streamlit app
 st.write('**Other customers bought also**')
