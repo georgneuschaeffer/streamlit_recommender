@@ -102,7 +102,7 @@ st.image(images, width=120, caption=images_caption)
 
 
 ### make the substitutes for the shown products:
-product_recommended_subs = list(df_recommendation.article_id.iloc[-1:-1]) # get the top 4 recommended products
+product_recommended_subs = list(df_recommendation.article_id.iloc[-6:-1]) # get the top 4 recommended products
 product_correlation_subs = list(df_recommendation.correlation.iloc[-6:-1]) # get the top 4 recommended products
 
 product_rec_name0_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[0]].prod_color.unique()[0]
