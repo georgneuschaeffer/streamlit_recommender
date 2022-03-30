@@ -9,13 +9,18 @@ from PIL import Image
 # pip uninstall click
 # pip install click==8.0.4
 
-st.title('Get best style recommendations based on purchased baskets of millions of users! Stand 17.00 Uhr 29.03.2022')
+st.title('Get best style recommendations based on purchased baskets of millions of users!')
 
-st.write('The purpose of this recommender is to show you the pieces that you may like based on the purchases of other people. The company sells more than 30,000 items and therefore you only see a small sample of products here. You can refresh the sample of clothes anytime you want')
+st.write('The purpose of this recommender is to show you the pieces that a customer may like based on the purchases of previous customers. The company sells more than 30,000 items and therefore you only see a small sample of products here. You can refresh the sample of clothes anytime you want')
+
+st.write('1. Focus only on ladieswear (largest group) and only focus on customer level (but not invoice level): 32m -> 28m.)
+st.write('2. Focus on 5000 most bought items 28m -> 10m)
+st.write('3. Focus only on customers, who bought more than 20 products')
+
 
 article_id_women_desc = pd.read_csv('article_id_women_desc.csv') # link between prod id and color and prod name
 df_sampled = pd.read_csv('df_sampled_42.csv') # create data framewith sampled data for recommendation
-sample_customer_pivot = df_sampled.pivot_table(index='invoice', columns=['article_id'], values='quantity').fillna(0) # make the table needed for recommendation
+sample_customer_pivot = df_sampled.pivot_table(index='invoice', columns=['article_id'], values='price_quant').fillna(0) # make the table needed for recommendation
 
 
 ## make recommender function
