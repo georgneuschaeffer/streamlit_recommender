@@ -75,24 +75,11 @@ product_rec_name2 = article_id_women_desc[article_id_women_desc['article_id'] ==
 product_rec_name3 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[3]].prod_color.unique()[0]
 product_rec_name4 = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended[4]].prod_color.unique()[0]
 
-# st.write('I recommend you the following products:')
-# st.write('    -->', product_rec_name0)
-# st.write('    -->', product_rec_name1)
-# st.write('    -->', product_rec_name2)
-# st.write('    -->', product_rec_name3)
-# st.write('    -->', product_rec_name4)
-
 picture_path1 = 'images_ladieswear/opt_0'+str(product_recommended[0])+'.jpg'
 picture_path2 = 'images_ladieswear/opt_0'+str(product_recommended[1])+'.jpg'
 picture_path3 = 'images_ladieswear/opt_0'+str(product_recommended[2])+'.jpg'
 picture_path4 = 'images_ladieswear/opt_0'+str(product_recommended[3])+'.jpg'
 picture_path5 = 'images_ladieswear/opt_0'+str(product_recommended[4])+'.jpg'
-
-# st.write(picture_path1)
-# st.write(picture_path2)
-# st.write(picture_path3)
-# st.write(picture_path4)
-# st.write(picture_path5)
 
 #opening the image
 image1 = Image.open(picture_path1)
@@ -110,19 +97,41 @@ images_caption = [(product_rec_name0, round(product_correlation[0],2)),
 (product_rec_name4, round(product_correlation[4],2))] #list of picture titles
 
 #displaying the image on streamlit app
-st.write('**Other customers bought also (product based)**')
+st.write('**Other customers bought also (product and price based) - Compements**')
 st.image(images, width=120, caption=images_caption)
 
-# image_iterator = paginator("Select a sunset page", sunset_imgs)
-# indices_on_page, images_on_page = map(list, zip(*image_iterator))
-# st.image(images_on_page, width=100, caption=indices_on_page)
 
+### make the substitutes for the shown products:
+product_recommended_subs = list(df_recommendation.article_id.iloc[-1:-1]) # get the top 4 recommended products
+product_correlation_subs = list(df_recommendation.correlation.iloc[-6:-1]) # get the top 4 recommended products
 
-# result = st.button('click here to get new clothes') # resamples the lsit of products.
-# if result: 
-#     st.write('new set of clothes!!')
-#     single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
-# else:
-#     st.write('still the same :)')
+product_rec_name0_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[0]].prod_color.unique()[0]
+product_rec_name1_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[1]].prod_color.unique()[0]
+product_rec_name2_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[2]].prod_color.unique()[0]
+product_rec_name3_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[3]].prod_color.unique()[0]
+product_rec_name4_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[4]].prod_color.unique()[0]
 
-st.write('I hope you like the recommondations!!!')
+picture_path1_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[0])+'.jpg'
+picture_path2_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[1])+'.jpg'
+picture_path3_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[2])+'.jpg'
+picture_path4_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[3])+'.jpg'
+picture_path5_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[4])+'.jpg'
+
+#opening the image
+image1_subs = Image.open(picture_path1_subs)
+image2_subs = Image.open(picture_path2_subs)
+image3_subs = Image.open(picture_path3_subs)
+image4_subs = Image.open(picture_path4_subs)
+image5_subs = Image.open(picture_path5_subs)
+
+images_subs = [image1_subs, image2_subs ,image3_subs, image4_subs, image5_subs] # list of pictures
+
+images_caption_subs = [(product_rec_name0_subs, round(product_correlation_subs[0],2)),  
+(product_rec_name1_subs, round(product_correlation_subs[1],2)), 
+(product_rec_name2_subs, round(product_correlation_subs[2],2)), 
+(product_rec_name3_subs, round(product_correlation_subs[3],2)), 
+(product_rec_name4_subs, round(product_correlation_subs[4],2))] #list of picture titles
+
+#displaying the image on streamlit app
+st.write('**Other customers did not by these products (product and price based) - Substitutes**')
+st.image(images_subs, width=120, caption=images_caption_subs)
