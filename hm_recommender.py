@@ -102,36 +102,36 @@ st.image(images, width=120, caption=images_caption)
 
 
 ### make the substitutes for the shown products:
-product_recommended_subs = list(df_recommendation.article_id.iloc[-6:-1]) # get the top 4 recommended products
-product_correlation_subs = list(df_recommendation.correlation.iloc[-6:-1]) # get the top 4 recommended products
+# product_recommended_subs = list(df_recommendation.article_id.iloc[-6:-1]) # get the top 4 recommended products
+# product_correlation_subs = list(df_recommendation.correlation.iloc[-6:-1]) # get the top 4 recommended products
 
-product_rec_name0_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[0]].prod_color.unique()[0]
-product_rec_name1_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[1]].prod_color.unique()[0]
-product_rec_name2_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[2]].prod_color.unique()[0]
-product_rec_name3_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[3]].prod_color.unique()[0]
-product_rec_name4_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[4]].prod_color.unique()[0]
+# product_rec_name0_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[0]].prod_color.unique()[0]
+# product_rec_name1_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[1]].prod_color.unique()[0]
+# product_rec_name2_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[2]].prod_color.unique()[0]
+# product_rec_name3_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[3]].prod_color.unique()[0]
+# product_rec_name4_subs = article_id_women_desc[article_id_women_desc['article_id'] == product_recommended_subs[4]].prod_color.unique()[0]
 
-picture_path1_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[0])+'.jpg'
-picture_path2_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[1])+'.jpg'
-picture_path3_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[2])+'.jpg'
-picture_path4_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[3])+'.jpg'
-picture_path5_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[4])+'.jpg'
+# picture_path1_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[0])+'.jpg'
+# picture_path2_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[1])+'.jpg'
+# picture_path3_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[2])+'.jpg'
+# picture_path4_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[3])+'.jpg'
+# picture_path5_subs = 'images_ladieswear/opt_0'+str(product_recommended_subs[4])+'.jpg'
 
-#opening the image
-image1_subs = Image.open(picture_path1_subs)
-image2_subs = Image.open(picture_path2_subs)
-image3_subs = Image.open(picture_path3_subs)
-image4_subs = Image.open(picture_path4_subs)
-image5_subs = Image.open(picture_path5_subs)
+# #opening the image
+# image1_subs = Image.open(picture_path1_subs)
+# image2_subs = Image.open(picture_path2_subs)
+# image3_subs = Image.open(picture_path3_subs)
+# image4_subs = Image.open(picture_path4_subs)
+# image5_subs = Image.open(picture_path5_subs)
 
-images_subs = [image1_subs, image2_subs ,image3_subs, image4_subs, image5_subs] # list of pictures
+# images_subs = [image1_subs, image2_subs ,image3_subs, image4_subs, image5_subs] # list of pictures
 
-images_caption_subs = [(product_rec_name0_subs, round(product_correlation_subs[0],2)),  
-(product_rec_name1_subs, round(product_correlation_subs[1],2)), 
-(product_rec_name2_subs, round(product_correlation_subs[2],2)), 
-(product_rec_name3_subs, round(product_correlation_subs[3],2)), 
-(product_rec_name4_subs, round(product_correlation_subs[4],2))] #list of picture titles
+# images_caption_subs = [(product_rec_name0_subs, round(product_correlation_subs[0],2)),  
+# (product_rec_name1_subs, round(product_correlation_subs[1],2)), 
+# (product_rec_name2_subs, round(product_correlation_subs[2],2)), 
+# (product_rec_name3_subs, round(product_correlation_subs[3],2)), 
+# (product_rec_name4_subs, round(product_correlation_subs[4],2))] #list of picture titles
 
-#displaying the image on streamlit app
-st.write('**Other customers did not by these products (product and price based) - Substitutes**')
-st.image(images_subs, width=120, caption=images_caption_subs)
+# #displaying the image on streamlit app
+# st.write('**Other customers did not by these products (product and price based) - Substitutes**')
+# st.image(images_subs, width=120, caption=images_caption_subs)
