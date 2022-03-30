@@ -79,7 +79,11 @@ picture_path3 = 'images_ladieswear/opt_0'+str(product_recommended[2])+'.jpg'
 picture_path4 = 'images_ladieswear/opt_0'+str(product_recommended[3])+'.jpg'
 picture_path5 = 'images_ladieswear/opt_0'+str(product_recommended[4])+'.jpg'
 
-
+st.write(picture_path1)
+st.write(picture_path2)
+st.write(picture_path3)
+st.write(picture_path4)
+st.write(picture_path5)
 
 #opening the image
 image1 = Image.open(picture_path1)
