@@ -13,7 +13,7 @@ st.title('Get best style recommendations based on purchased baskets of millions 
 
 st.write('The purpose of this recommender is to show you the pieces that a customer may like based on the purchases of previous customers. The company sells more than 30,000 items and therefore you only see a small sample of products here. You can refresh the sample of clothes anytime you want')
 
-st.write('1. Focus only on ladieswear (largest group) and only focus on customer level (but not invoice level): 32m -> 28m.)
+st.write('1. Focus only on ladieswear (largest group) and only focus on customer level (but not invoice level): 32m -> 28m.')
 st.write('2. Focus on 5000 most bought items 28m -> 10m')
 st.write('3. Focus only on customers, who bought more than 20 products')
 
