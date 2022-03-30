@@ -73,11 +73,11 @@ product_rec_name4 = article_id_women_desc[article_id_women_desc['article_id'] ==
 # st.write('    -->', product_rec_name3)
 # st.write('    -->', product_rec_name4)
 
-picture_path1 = 'images_ladieswear/opt_0'+str(product_recommended[0])+'.jpg'
-picture_path2 = 'images_ladieswear/opt_0'+str(product_recommended[1])+'.jpg'
-picture_path3 = 'images_ladieswear/opt_0'+str(product_recommended[2])+'.jpg'
-picture_path4 = 'images_ladieswear/opt_0'+str(product_recommended[3])+'.jpg'
-picture_path5 = 'images_ladieswear/opt_0'+str(product_recommended[4])+'.jpg'
+# picture_path1 = 'images_ladieswear/opt_0'+str(product_recommended[0])+'.jpg'
+# picture_path2 = 'images_ladieswear/opt_0'+str(product_recommended[1])+'.jpg'
+# picture_path3 = 'images_ladieswear/opt_0'+str(product_recommended[2])+'.jpg'
+# picture_path4 = 'images_ladieswear/opt_0'+str(product_recommended[3])+'.jpg'
+# picture_path5 = 'images_ladieswear/opt_0'+str(product_recommended[4])+'.jpg'
 
 st.write(picture_path1)
 st.write(picture_path2)
