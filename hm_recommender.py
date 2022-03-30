@@ -48,7 +48,11 @@ product = st.selectbox('Choose which product you like', single_articles) #select
 
 
 st.write('**The selected product is**') #, article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
-slected_prod_pic = Image.open('pictures/opt_0156289011.jpg')
+#slected_prod_pic = Image.open('pictures/opt_0156289011.jpg')
+picture_path = 'images_ladieswear/opt_0'+str(product)+'jpg'
+slected_prod_pic = Image.open(picture_path)
+
+
 st.image(slected_prod_pic, caption=article_id_women_desc[article_id_women_desc['article_id'] == product].prod_color.unique()[0])
 
 st.write(' ')
@@ -69,12 +73,20 @@ product_rec_name4 = article_id_women_desc[article_id_women_desc['article_id'] ==
 # st.write('    -->', product_rec_name3)
 # st.write('    -->', product_rec_name4)
 
+picture_path1 = 'images_ladieswear/opt_0'+str(product_recommended[0])+'jpg'
+picture_path2 = 'images_ladieswear/opt_0'+str(product_recommended[1])+'jpg'
+picture_path3 = 'images_ladieswear/opt_0'+str(product_recommended[2])+'jpg'
+picture_path4 = 'images_ladieswear/opt_0'+str(product_recommended[3])+'jpg'
+picture_path5 = 'images_ladieswear/opt_0'+str(product_recommended[4])+'jpg'
+
+
+
 #opening the image
-image1 = Image.open('pictures/opt_0153115039.jpg')
-image2 = Image.open('pictures/opt_0156224001.jpg')
-image3 = Image.open('pictures/opt_0153115039.jpg')
-image4 = Image.open('pictures/opt_0156231001.jpg')
-image5 = Image.open('pictures/opt_0156610007.jpg')
+image1 = Image.open(picture_path1)
+image2 = Image.open(picture_path2)
+image3 = Image.open(picture_path3)
+image4 = Image.open(picture_path4)
+image5 = Image.open(picture_path5)
 
 images = [image1, image2 ,image3, image4, image5] # list of pictures
 
