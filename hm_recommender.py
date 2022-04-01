@@ -46,7 +46,7 @@ def get_recommendation(df,item):
 
 if st.button('Select random new product'):
     product = np.random.choice(df_sampled['article_id'].unique(), 1)
- else:
+else:
     product = np.random.choice(df_sampled['article_id'].unique(), 1)
 
 #product = np.random.choice(df_sampled['article_id'].unique()[0], 1)[0] #select one specific product
