@@ -9,13 +9,12 @@ from PIL import Image
 # pip uninstall click
 # pip install click==8.0.4
 
-st.title('Get best style recommendations based on purchased baskets of millions of users!')
+st.title('Fashion product recommender')
 
-st.write('The purpose of this recommender is to show you the pieces that a customer may like based on the purchases of previous customers. The company sells more than 30,000 items and therefore you only see a small sample of products here. You can refresh the sample of clothes anytime you want')
-
-st.write('1. Focus only on ladieswear (largest group) and only focus on customer level (but not invoice level): 32m -> 28m.')
-st.write('2. Focus on 5000 most bought items 28m -> 10m')
-st.write('3. Focus only on customers, who bought more than 20 products')
+st.write('This recommender shows you the pieces that other customers bought, when buying the selected product.')
+st.write('1. The recommender focus only ladieswear')
+st.write('2. It recommends products which are the top 5000 sold products (out of nearly 40000 products).')
+# st.write('3. Focus only on customers, who bought more than 20 products')
 
 
 article_id_women_desc = pd.read_csv('article_id_women_desc.csv') # link between prod id and color and prod name
@@ -42,8 +41,13 @@ def get_recommendation(df,item):
     return recommendations
 
 ## Get a list of clothes that are presented to the user
-single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
-product = st.selectbox('Choose which product you like', single_articles) #select one specific product
+# single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
+# product = st.selectbox('Choose which product you like', single_articles) #select one specific product
+
+if st.button('Select random new product'):
+    product = np.random.choice(df_sampled['article_id'].unique(), 1)
+ else:
+    product = np.random.choice(df_sampled['article_id'].unique(), 1)
 
 #product = np.random.choice(df_sampled['article_id'].unique()[0], 1)[0] #select one specific product
 
