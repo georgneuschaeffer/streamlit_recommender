@@ -9,11 +9,11 @@ from PIL import Image
 # pip uninstall click
 # pip install click==8.0.4
 
-st.title('Welcome: This is a fashion product recommender')
+st.title('Welcome: This is a simple fashion product recommender for ladieswear')
 
 st.write('This recommender shows you the pieces that other customers bought, when buying the selected product.')
-st.write('1. The recommender focus only ladieswear')
-st.write('2. It recommends products which are the top 5000 sold products (out of nearly 40000 products).')
+#st.write('1. The recommender focus only ladieswear')
+st.write('It recommends five out of the top 5000 sold products (out of nearly 40000 products).')
 # st.write('3. Focus only on customers, who bought more than 20 products')
 
 
