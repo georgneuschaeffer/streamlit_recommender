@@ -9,7 +9,7 @@ from PIL import Image
 # pip uninstall click
 # pip install click==8.0.4
 
-st.title('Fashion product recommender')
+st.title('Welcome: This is a fashion product recommender')
 
 st.write('This recommender shows you the pieces that other customers bought, when buying the selected product.')
 st.write('1. The recommender focus only ladieswear')
@@ -44,7 +44,7 @@ def get_recommendation(df,item):
 # single_articles = np.random.choice(df_sampled['article_id'].unique(), 4) # one specific list of products is
 # product = st.selectbox('Choose which product you like', single_articles) #select one specific product
 
-if st.button('Select random new product'):
+if st.button('Select a random product'):
     product = np.random.choice(df_sampled['article_id'].unique(), 1)[0]
 else:
     product = np.random.choice(df_sampled['article_id'].unique(), 1)[0]
@@ -101,7 +101,7 @@ images_caption = [(product_rec_name0, round(product_correlation[0],2)),
 (product_rec_name4, round(product_correlation[4],2))] #list of picture titles
 
 #displaying the image on streamlit app
-st.write('**Other customers bought also (product and price based) - Compements**')
+st.write('**Other customers bought also these products:**')
 st.image(images, width=120, caption=images_caption)
 
 
